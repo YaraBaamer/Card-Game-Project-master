@@ -17,6 +17,8 @@ let time=0;
 let timerId=0;
 let timerOut= true;
 let card ;
+let matchnumber=0;
+const arr=[];
 
 //Elements
 // const start = document.querySelector("")
@@ -75,6 +77,7 @@ deck.addEventListener("click",(event)=>{
     }
     else if(event.target.classList.contains("open") ){
         console.log(event.target);
+        event.target.classList.remove("open")
     }
     else if(event.target.classList.contains("card")){
     console.log(event.target);
@@ -83,8 +86,16 @@ deck.addEventListener("click",(event)=>{
         initClock();
     }
     console.log(event.target);
-    card = event.target;}
+    card = event.target;
+arr.push(card);
+if(arr.length==2){
+    if(arr[0]==arr[1]){
+        event.target.classList.add("match")
+    }
+  }
+}
 });
+
 
 
 
