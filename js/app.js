@@ -16,6 +16,7 @@ function shuffle(array) {
 let time=0;
 let timerId=0;
 let timerOut= true;
+let card ;
 
 //Elements
 // const start = document.querySelector("")
@@ -69,14 +70,20 @@ reset.addEventListener("click",function () {
 //if contains match or open already **
 const deck = document.querySelector("#deck")
 deck.addEventListener("click",(event)=>{
-    
-    if(event.target.classList.contains("card")){
+    if(event.target.classList.contains("match")){
+        console.log(event.target); 
+    }
+    else if(event.target.classList.contains("open") ){
+        console.log(event.target);
+    }
+    else if(event.target.classList.contains("card")){
     console.log(event.target);
     event.target.classList.add("open")
-    if (timerOut){
+        if (timerOut){
         initClock();
     }
-    console.log(event.target);}
+    console.log(event.target);
+    card = event.target;}
 });
 
 
